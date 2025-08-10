@@ -1,4 +1,5 @@
 name: Frontend CI
+
 on:
   push:
     branches: ['*']
@@ -17,6 +18,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22.17.0
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
